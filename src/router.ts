@@ -7,10 +7,9 @@ import UIElements from "./views/UIElements.vue";
 import Login from "./views/Login.vue";
 import Modal from "./views/Modal.vue";
 import Card from "./views/Card.vue";
-import Blank from "./views/Blank.vue";
 import NotFound from "./views/NotFound.vue";
 
-const routes: RouteRecordRaw[] = [
+export const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "Login",
@@ -18,8 +17,8 @@ const routes: RouteRecordRaw[] = [
     meta: { layout: "empty" },
   },
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/users",
+    name: "Users",
     component: Dashboard,
   },
   {
@@ -48,9 +47,9 @@ const routes: RouteRecordRaw[] = [
     component: Modal,
   },
   {
-    path: "/blank",
-    name: "Blank",
-    component: Blank,
+    path: "/:pathMatch(.*)*",
+    name: "not-found",
+    component: NotFound
   },
 ];
 
